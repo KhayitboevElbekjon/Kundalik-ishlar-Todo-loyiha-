@@ -4,5 +4,6 @@ from django.urls import path
 from asosiy.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Home)
+    path('',Home),
+    path('HomeEdit/<int:son>',HomeEdit)
 ]
