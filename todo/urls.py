@@ -6,5 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Home),
     path('HomeEdit/<int:son>',HomeEdit),
-    path('qushish/',qushish)
+    path('qushish/',qushish),
+    path('edit/<int:son>',TodoEdit)
 ]

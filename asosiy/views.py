@@ -18,3 +18,17 @@ def qushish(request):
             status=request.POST.get('status')
             )
     return redirect('/')
+
+def TodoEdit(request,son):
+    if request.method=='POST':
+        Todo.objects.filter(id=son).update(
+            nom=request.POST.get('nom'),
+            bajarilish_vaqti=request.POST.get('vaqt'),
+            batafsil=request.POST.get('batafsil'),
+            status=request.POST.get('status')
+        )
+        return redirect('/')
+    data={
+        'data':Todo.objects.get(id=son)
+    }
+    return render(request,'edit.html',data)

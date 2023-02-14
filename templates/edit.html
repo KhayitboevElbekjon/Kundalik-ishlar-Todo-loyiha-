@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <style>
+                .cc{
+            width: 250px;
+            height: 35px;
+            background-color: #e7e7e7; color: black;
+            border: 2px solid #4CAF50;
+        }
+        .cc:hover {
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+             .aa{
+            width: 120px;
+            height: 35px;
+            background-color: #00ff6b; color: blue;
+            border: 2px solid #4CAF50;
+        }
+        .aa:hover {
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+    </style>
+</head>
+<body>
+<h2>Kundalik ishlarni tahrirlash</h2>
+ <hr>
+        <form  method="post" > {% csrf_token %}
+
+            <br>
+            <input class="cc" type="text" name="nom" value="{{data.nom}}" size="30">
+            <br><br>
+            <input class="cc" type="date" name="vaqt" value="{{data.bajarilish_vaqti}}" size="30">
+            <br><br>
+            <input  class="cc" type="text" name="batafsil" value="{{data.batafsil}}" size="30"  >
+            <br><br>
+            <input class="cc" type="text" name="status" value="{{data.status}}" size="30">
+            <br><br>
+
+        <button type="submit"  class="aa" >Qo'shish</button>
+
+      </form>
+</body>
+</html>
+

@@ -11,7 +11,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!--style-->
   <style>
-
+                        .cc{
+            width: 250px;
+            height: 35px;
+            background-color: #e7e7e7; color: black;
+            border: 2px solid #4CAF50;
+        }
+        .cc:hover {
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
   .card {
 
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),
@@ -69,8 +77,11 @@
         <hr/>
         {{i.status}}
         <br />
-        <button class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span><a href="/HomeEdit/{{i.id}}">O'chirish </a></button>
-<!--        <a href="/HomeEdit/{{i.id}}"><button>O'chirish</button></a>-->
+        <br>
+        <a href="edit/{{i.id}}"><button class="btn btn-primary" style="floa: left;">Tahrirlash</button></a>
+<!--        <button class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span><a href="/HomeEdit/{{i.id}}">O'chirish</a></button>-->
+
+        <a href="/HomeEdit/{{i.id}}"><button class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span> O'chirish</button></a>
       </div>
       {% endfor %}
     </div>
@@ -82,17 +93,17 @@
         <form action="qushish/" method="post" > {% csrf_token %}
           <center>
             <h2><em>Kundalik ishlarni qo'shish</em></h2>
-            <br>
-            <input type="text" name="nom" placeholder="Nom" >
+            <hr>
+            <input class="cc" type="text" name="nom" placeholder="Nom" size="30">
             <br><br>
-            <input type="date" name="vaqt" placeholder="Bajarilish vaqti" >
+            <input class="cc" type="date" name="vaqt" placeholder="Bajarilish vaqti" size="30">
             <br><br>
-            <input type="text" name="batafsil" placeholder="Batafsil ma'lumot" >
+            <input class="cc" type="text" name="batafsil" placeholder="Batafsil ma'lumot" size="30"  >
             <br><br>
-            <input type="text" name="status" placeholder="Status" >
+            <input class="cc" type="text" name="status" placeholder="Status" size="30">
             <br><br>
             <hr>
-        <button type="submit" class="btn btn-default">Qo'shish</button>
+        <button  type="submit"  class="btn btn-primary" >Qo'shish</button>
       </center>
       </form>
 
