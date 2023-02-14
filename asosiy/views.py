@@ -8,3 +8,13 @@ def Home(request):
 def HomeEdit(request,son):
     Todo.objects.get(id=son).delete()
     return redirect('/')
+
+def qushish(request):
+    if request.method=='POST':
+        Todo.objects.create(
+            nom=request.POST.get('nom'),
+            bajarilish_vaqti=request.POST.get('vaqt'),
+            batafsil=request.POST.get('batafsil'),
+            status=request.POST.get('status')
+            )
+    return redirect('/')
